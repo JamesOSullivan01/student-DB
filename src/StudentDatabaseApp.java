@@ -18,7 +18,7 @@ public class StudentDatabaseApp {
 // To see the status of the student, we should see their name, ID, courses e
     public static void main(String[] args) {
         Student stu1 = new Student();
-        System.out.println(stu1.toString());
+        stu1.enroll();
 
         }
 }

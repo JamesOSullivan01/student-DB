@@ -6,15 +6,15 @@ public class Student {
     private String studentLastName;
     private String studentId;
     private int gradeYear;
-    private String courses;
+    private String courses = "";
 
-    private int tuitionBalance;
-    private static int costOfCourse;
+    private int tuitionBalance = 0;
+    private static int costOfCourse = 600;
     private static int id = 1000;
 
+    Scanner scanner = new Scanner(System.in);
 
     public Student(){
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter student first name");
         this.studentFirstName = scanner.nextLine();
         System.out.println("Please enter student last name");
@@ -22,6 +22,7 @@ public class Student {
         System.out.println("Please enter student grade year (1-4)");
         this.gradeYear= scanner.nextInt();
 
+        scanner.nextLine();
         setStudentId();
 
     }
@@ -38,7 +39,21 @@ public class Student {
 
     //promt user
 
-   public void enroll(){
+   public void enroll() {
+       do {
+           System.out.println("Enter course to enroll (Q to quit)");
+           System.out.println("1 - History 101\n2 - Mathematics 101\n3 - English 101\n4 - Chemistry 101\n5 - Computer Science 101");
+           String course = scanner.nextLine();
+           if (!course.equals("Q")) {
+               courses += "\n" + course;
+               tuitionBalance = tuitionBalance + costOfCourse;
+               System.out.println("Enrolled in: " + courses);
+               System.out.println("Tuition Balance: " + tuitionBalance);
+           } else {
+               System.exit(0);
+           }
+       }while (1 != 0);
+
    }
 
     // enroll in courses
