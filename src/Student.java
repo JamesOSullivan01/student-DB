@@ -39,6 +39,8 @@ public class Student {
 
     //promt user
 
+    // enroll in courses
+
    public void enroll() {
        do {
            System.out.println("Enter course to enroll (Q to quit)");
@@ -50,13 +52,19 @@ public class Student {
                System.out.println("Enrolled in: " + courses);
                System.out.println("Tuition Balance: " + tuitionBalance);
            } else {
-               System.exit(0);
+               break;
            }
        }while (1 != 0);
-
    }
 
-    // enroll in courses
+    public void viewBalance(){
+        System.out.println("Your balance is: $" + tuitionBalance);
+    }
+
+    public void payTuition(int payment){
+        tuitionBalance = tuitionBalance - payment;
+        System.out.println("Your tuition balance after this payment is: $" + tuitionBalance);
+    }
 
     //Show total balance and pay tuition
 
