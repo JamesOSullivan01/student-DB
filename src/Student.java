@@ -33,13 +33,6 @@ public class Student {
     }
 
 
-    //Ask user how many new users will be added
-
-        // create n number of students
-
-    //promt user
-
-    // enroll in courses
 
    public void enroll() {
        do {
@@ -69,11 +62,9 @@ public class Student {
         System.out.println("Your tuition balance after this payment is: $" + tuitionBalance);
     }
 
-    //Show total balance and pay tuition
-
-    // constructor: prompt user for name and year
-
-    // show status
+    public String showInfo(){
+        return "Name: " + studentFirstName + " " + studentLastName + "\nGrade Level: " + gradeYear + "\n Student ID: " + studentId + "Enrolled in: " + courses + "\nBalance: " + tuitionBalance;
+    }
 
 
     @Override

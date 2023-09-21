@@ -1,5 +1,6 @@
+import java.util.Scanner;
+
 public class StudentDatabaseApp {
-//    Project 2
 //Student Database Application
 //Scenario: You are a Database Administrator for a university and need to
 //create an application to manage student enrollments and balance.
@@ -17,9 +18,17 @@ public class StudentDatabaseApp {
 // The student should be able to view their balance and pay the tuition
 // To see the status of the student, we should see their name, ID, courses e
     public static void main(String[] args) {
-        Student stu1 = new Student();
-        stu1.enroll();
-        stu1.payTuition();
 
+        System.out.println("How many students would you like to add?");
+        Scanner in = new Scanner(System.in);
+        int numberOfStudents = in.nextInt();
+
+        Student[] students = new Student[numberOfStudents];
+        for (int n = 0; n < numberOfStudents; n++) {
+            students[n] = new Student();
+            students[n].enroll();
+            students[n].payTuition();
+            System.out.println(students[n].showInfo());
         }
+    }
 }
